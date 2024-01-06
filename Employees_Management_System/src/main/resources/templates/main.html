@@ -11,23 +11,13 @@
 </head>
 <body>
 	<h1>Main Page</h1>
-	<a th:href="@{/manager}">Leadership</a> (Only for MANAGER)
-	<a th:href="@{/systems}">Systems</a> (Only for Admin) <br>
 	
-	<div sec:authorize="hasRole('STUDENT')">
+	<div sec:authorize="hasRole('MANAGER')">
 		<p>
-			Logged in as EMPLOYEE
-			<a th:href="@{/manager}">Leadership</a> (Only for MANAGER)
+			Logged in as MANAGER
 		</p>
 	</div>
-	
-	<div sec:authorize="hasRole('TEACHER')">
-		<p>
-			Logged in as Teacher
 
-		</p>
-	</div>
-	
 	<div sec:authorize="hasRole('ADMIN')">
 		<p>
 			Logged in as Admin
@@ -55,8 +45,6 @@
 
 		</p>
 	</div>
-
-
 
 	<form th:action="@{/logout}" method="POST">
 		<input type="submit" value="logout">

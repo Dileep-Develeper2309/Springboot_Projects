@@ -40,8 +40,11 @@ public class Config {
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
 		httpSecurity.authorizeHttpRequests(configurer -> 
 		configurer
+		.requestMatchers("/").permitAll()
 		.requestMatchers("/manager").hasRole("MANAGER")
 		.requestMatchers("/systems").hasRole("ADMIN")
+		.requestMatchers("/home").permitAll()
+		.requestMatchers("/contact").permitAll()
 		.anyRequest().authenticated()
 				)
 		.formLogin(form ->

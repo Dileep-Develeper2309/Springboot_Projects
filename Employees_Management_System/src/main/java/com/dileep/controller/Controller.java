@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Controller {
 
 	@GetMapping("/")
-	public String home() {
-		return "home";
+	public String homepage() {
+		return "homepage";
 	}
 	
 	
@@ -37,8 +37,14 @@ public class Controller {
 		return "access-denied";
 	}
 	
-	@GetMapping("/emp")
-	public String test() {
-		return "emp";
+	//@GetMapping("/test")
+	@GetMapping("/home")
+	public String home() {
+		return "home";
+	}
+	
+	@GetMapping("/contact")
+	public String contact() {
+		return "contact";
 	}
 }
