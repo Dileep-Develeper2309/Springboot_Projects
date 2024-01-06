@@ -45,6 +45,7 @@ public class Config {
 		.requestMatchers("/systems").hasRole("ADMIN")
 		.requestMatchers("/home").permitAll()
 		.requestMatchers("/contact").permitAll()
+		.requestMatchers("/about").permitAll()
 		.anyRequest().authenticated()
 				)
 		.formLogin(form ->
