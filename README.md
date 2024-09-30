@@ -4,5 +4,8 @@
 -> Platform Type as it is. </br>
 -> Platform Java </br>
 -> Search for IAM -> create role -> choose elastic bean - customized -> Create another role - ec2 </br>
+->For ec2 - AWSElasticBeanstalkWebTier 
+AWSElasticBeanstalkWorkerTier 
+AWSElasticBeanstalkMulticontainerDocker
 -> Now choose roles you have created </br>
 -> Add SERVER_PORT -> 5000 </br>
