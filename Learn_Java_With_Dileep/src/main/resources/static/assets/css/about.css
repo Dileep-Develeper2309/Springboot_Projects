@@ -23,7 +23,7 @@ color:white;
 .image-container {
   text-align: center; /* Centers the image horizontally */
   margin: 20px 0; /* Adds space above and below the image */
-  height:auto;
-  width:400;
+  height:100;
+  width:100;
   border-radius:12px;
   }
