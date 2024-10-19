@@ -1,0 +1,37 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-image: url('../images/laptop.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+}
+
+h1{
+padding:2px;
+}
+ header {
+            background-color: transparent;
+            color: white;
+            /*text-align: center;*/
+            padding: 1rem;
+  }
+  footer {
+      background-color: transparent;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      color: white;
+  }
+
+  #form {
+              background-color: transparent;
+              color: white;
+              /*text-align: center;*/
+              padding: 1rem;
+    }
+
