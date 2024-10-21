@@ -20,8 +20,13 @@ public class SecurityConfig {
                         .requestMatchers("/", "/home").permitAll()
                         .requestMatchers("/about").permitAll()
                         .requestMatchers("/assets/**").permitAll()
+                        .requestMatchers("/dashboard").authenticated()
+                        .requestMatchers("/login").permitAll()
                 )
-                .formLogin(Customizer.withDefaults())
+                .formLogin(loginConfigurer -> loginConfigurer.loginPage("/login")
+                        .defaultSuccessUrl("/dashboard").failureUrl("/login?error=true").permitAll())
+                .logout(logoutConfigurer -> logoutConfigurer.logoutSuccessUrl("/login?logout=true")
+                        .invalidateHttpSession(true).permitAll())
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }
