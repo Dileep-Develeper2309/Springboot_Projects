@@ -17,7 +17,7 @@ public class SecurityConfig {
 
         // Permit All Requests inside the Web Application
         http.authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/", "/home").authenticated()
+                        .requestMatchers("/", "/home").permitAll()
                         .requestMatchers("/about").permitAll()
                         .requestMatchers("/assets/**").permitAll()
                 )
@@ -34,11 +34,30 @@ public class SecurityConfig {
                 .password("12345")
                 .roles("USER")
                 .build();
+
+        UserDetails supriya = User.withDefaultPasswordEncoder()
+                .username("supriya")
+                .password("12345")
+                .roles("USER")
+                .build();
+
+        UserDetails gokul = User.withDefaultPasswordEncoder()
+                .username("gokul")
+                .password("12345")
+                .roles("USER")
+                .build();
+
+        UserDetails chiku = User.withDefaultPasswordEncoder()
+                .username("chiku")
+                .password("12345")
+                .roles("FIANCE")
+                .build();
+
         UserDetails admin = User.withDefaultPasswordEncoder()
                 .username("admin")
                 .password("54321")
                 .roles("USER", "ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager(user, admin,supriya,gokul,chiku);
     }
 }
