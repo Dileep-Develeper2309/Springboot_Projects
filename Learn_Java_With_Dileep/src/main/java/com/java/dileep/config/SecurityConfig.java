@@ -20,7 +20,7 @@ public class SecurityConfig {
                         .requestMatchers("/", "/home").permitAll()
                         .requestMatchers("/about").permitAll()
                         .requestMatchers("/assets/**").permitAll()
-                        .requestMatchers("/dashboard").authenticated()
+                        .requestMatchers("/dashboard").permitAll()
                         .requestMatchers("/login").permitAll()
                 )
                 .formLogin(loginConfigurer -> loginConfigurer.loginPage("/login")
