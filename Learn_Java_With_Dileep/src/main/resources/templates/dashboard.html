@@ -12,6 +12,7 @@
     <!-- <link rel="stylesheet" th:href="@{/css/styles.css}">-->
 </head>
 <body>
+<div th:replace="header::header"></div>
 <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
     <h3 class="title-style" th:text="${'Welcome - ' + username}"></h3>
     <p class="" th:text="${'You logged in as - ' + roles}"></p>
