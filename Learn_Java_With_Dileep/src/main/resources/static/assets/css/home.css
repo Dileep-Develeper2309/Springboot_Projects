@@ -35,3 +35,11 @@ padding:2px;
               padding: 1rem;
     }
 
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: white;
+  cursor: pointer;
+}
